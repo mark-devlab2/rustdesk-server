@@ -1,0 +1,35 @@
+{
+  "serviceId": "rustdesk-server",
+  "runtime": {
+    "type": "container-mirror",
+    "version": "1.1.15"
+  },
+  "registries": {
+    "acr": {
+      "host": "crpi-vbmaa8d6ek5k7rjt.cn-beijing.personal.cr.aliyuncs.com",
+      "namespace": "himark",
+      "enabled": true
+    }
+  },
+  "test": {
+    "run": "sh test/validate.sh"
+  },
+  "images": [
+    {
+      "name": "hbbs",
+      "image": "rustdesk-server-hbbs",
+      "context": ".",
+      "dockerfile": "Dockerfile"
+    },
+    {
+      "name": "hbbr",
+      "image": "rustdesk-server-hbbr",
+      "context": ".",
+      "dockerfile": "Dockerfile"
+    }
+  ],
+  "deploy": {
+    "defaultTarget": "full",
+    "productionRegistry": "acr"
+  }
+}
