@@ -1,1 +1,1 @@
-FROM rustdesk/rustdesk-server:1.1.15
+FROM rustdesk/rustdesk-server:1.1.9

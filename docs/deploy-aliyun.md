@@ -11,6 +11,8 @@
 5. GitHub Actions 通过 `aliyun-deploy-platform` 触发远端部署
 6. 服务器拉取镜像、重启容器、执行 TCP 健康检查
 
+当前生产基线固定为 `rustdesk/rustdesk-server:1.1.9`，不要改回漂移 tag 或未验证版本。
+
 ## 远端运行时
 
 默认平台目录：
@@ -68,3 +70,4 @@ aliyun-deploy-platform/services/rustdesk-server/compose.prod.env.example
 - `ss -lntup | grep -E '21115|21116|21117'`
 - `cat /opt/aliyun-deploy-platform/runtime/rustdesk-server/data/id_ed25519.pub`
 - RustDesk 客户端使用 `ECS 公网 IP + 公钥` 成功连接
+- 验证机完成一次连接后，导出 `Server Config`，供其他客户端导入复用

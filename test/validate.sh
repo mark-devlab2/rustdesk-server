@@ -9,7 +9,7 @@ build = json.loads(Path(".deploy/build.yaml").read_text(encoding="utf-8"))
 
 assert build["serviceId"] == "rustdesk-server"
 assert build["runtime"]["type"] == "container-mirror"
-assert build["runtime"]["version"] == "1.1.15"
+assert build["runtime"]["version"] == "1.1.9"
 assert build["deploy"]["defaultTarget"] == "full"
 assert build["deploy"]["productionRegistry"] == "acr"
 
@@ -20,5 +20,5 @@ for image in build["images"]:
     assert image["context"] == "."
 
 dockerfile = Path("Dockerfile").read_text(encoding="utf-8").strip()
-assert dockerfile == "FROM rustdesk/rustdesk-server:1.1.15"
+assert dockerfile == "FROM rustdesk/rustdesk-server:1.1.9"
 PY

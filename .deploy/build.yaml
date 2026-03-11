@@ -2,7 +2,7 @@
   "serviceId": "rustdesk-server",
   "runtime": {
     "type": "container-mirror",
-    "version": "1.1.15"
+    "version": "1.1.9"
   },
   "registries": {
     "acr": {

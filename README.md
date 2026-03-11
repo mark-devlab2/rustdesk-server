@@ -4,7 +4,7 @@
 
 ## 内容
 
-- 固定上游镜像版本：`rustdesk/rustdesk-server:1.1.15`
+- 固定上游镜像版本：`rustdesk/rustdesk-server:1.1.9`
 - 发布目标：
   - `rustdesk-server-hbbs`
   - `rustdesk-server-hbbr`
@@ -39,3 +39,6 @@ sh test/validate.sh
 - `ID Server`: ECS 公网 IP
 - `Relay Server`: ECS 公网 IP
 - `Key`: 上述公钥
+
+更推荐先在一台验证机完成设置，再通过 `Export Server Config` / `Import Server Config`
+向其他客户端分发，避免手填配置被本地服务同步覆盖。
